@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "New Category";
+}
+<div class="Container">
+    <div class="row">
+        <h4 class="col-sm-auto py-4 ">Create New Category</h4>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Name</span>
+        </div>
+        <input type="text" class="form-control" />
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span  class="input-group-text h-100" id="basic-addon1">Detail</span>
+        </div>
+        <textarea class="form-control" style="resize: none;">            
+        </textarea>        
+    </div>
+    <div class="row justify-content-end">
+        <div class="col-sm-auto">
+            <button onclick="location.href='@Url.Action("CreateNewCategory", "Category")'" class="btn btn-outline-dark">Create</button>
+        </div>
+    </div>
+</div>
