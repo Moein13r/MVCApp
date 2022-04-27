@@ -1,26 +1,31 @@
 @{
     ViewData["Title"] = "New Category";
 }
+@model MvcApp1.Models.Request.CategoryRequest
 <div class="Container">
-    <div class="row">
-        <h4 class="col-sm-auto py-4 ">Create New Category</h4>
-    </div>
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Name</span>
+    <form action="Category/CreateNewCategory">
+        <div class="row">
+            <h4 class="col-sm-auto py-4 ">Create New Category</h4>
         </div>
-        <input type="text" class="form-control" />
-    </div>
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span  class="input-group-text h-100" id="basic-addon1">Detail</span>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Name</span>
+            </div>
+            @Html.TextBoxFor(m=>m.Name)
+            <input type="text" class="form-control" />
         </div>
-        <textarea class="form-control" style="resize: none;">            
-        </textarea>        
-    </div>
-    <div class="row justify-content-end">
-        <div class="col-sm-auto">
-            <button onclick="location.href='@Url.Action("CreateNewCategory", "Category")'" class="btn btn-outline-dark">Create</button>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span  class="input-group-text h-100" id="basic-addon1">Detail</span>
+            </div>
+            @Html.TextAreaFor(m=>m.Detail)
+            <textarea class="form-control" style="resize: none;">            
+            </textarea>        
         </div>
-    </div>
+        <div class="row justify-content-end">
+            <div class="col-sm-auto">
+                <input type="submit" class="btn btn-outline-dark" />
+            </div>
+        </div>
+    </form>
 </div>
