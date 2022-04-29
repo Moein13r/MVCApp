@@ -16323,6 +16323,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\mrahm\\source\\repos\\MvcApp1\\Views\\Login\\Login.cshtml",
+      "TargetPath": "Views\\Login\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\mrahm\\source\\repos\\MvcApp1\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"

@@ -19,7 +19,15 @@ namespace MvcApp1.Controllers
         }
         public IActionResult Category()
         {
-            return View();
+            try
+            {
+                var items=DataAccess.GetCategories();    
+                return View(items);
+            }
+            catch (System.Exception e)
+            {            
+                throw new Exception();
+            }                        
         }
         public IActionResult CategoryNew()
         {

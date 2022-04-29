@@ -1,6 +1,7 @@
 @{
-    ViewData["Title"] = "Products Page";
+    ViewData["Title"] = "Products Page";    
 }
+@model List<Category>
 <div class="Container">
     <div class="row mb-3">
         <div class="col-6">
@@ -17,10 +18,16 @@
                 </tr>
             </thead>
             <tbody>
-
+                @foreach (var item in Model)
+                {                 
+                    <tr>
+                        <td></td>
+                        <td>@item.Name</td>
+                        <td>@item.Detail</td>
+                    </tr>   
+                }
             </tbody>
             <tfoot>
-
             </tfoot>
         </table>
     </div>
