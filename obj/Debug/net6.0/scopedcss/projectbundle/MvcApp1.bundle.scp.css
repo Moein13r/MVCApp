@@ -1,45 +1,55 @@
-/* _content/MvcApp1/Views/Login/Login.cshtml.rz.scp.css */
+/* _content/MvcApp1/Views/Shared/SignInOut.cshtml.rz.scp.css */
 @media (min-width: 1025px) {
-    .h-custom[b-nwz5q5i50u] {
-    height: 100vh !important;
+    .h-custom[b-61mhvsoavr] {
+        height: 100vh !important;
     }
-    }
-    .card-registration .select-input.form-control[readonly]:not([disabled])[b-nwz5q5i50u] {
+}
+
+.card-registration .select-input.form-control[readonly]:not([disabled])[b-61mhvsoavr] {
     font-size: 1rem;
     line-height: 2.15;
     padding-left: .75em;
     padding-right: .75em;
-    }
-    .card-registration .select-arrow[b-nwz5q5i50u] {
+}
+
+.card-registration .select-arrow[b-61mhvsoavr] {
     top: 13px;
-    }
-    
-    .gradient-custom-2[b-nwz5q5i50u] {
+}
+
+.gradient-custom-2[b-61mhvsoavr] {
     /* fallback for old browsers */
     background: #a1c4fd;
-    
+
     /* Chrome 10-25, Safari 5.1-6 */
     background: -webkit-linear-gradient(to right, rgba(161, 196, 253, 1), rgba(194, 233, 251, 1));
-    
+
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to right, rgba(161, 196, 253, 1), rgba(194, 233, 251, 1))
-    }
-    
-    .bg-indigo[b-nwz5q5i50u] {
+}
+
+.bg-indigo[b-61mhvsoavr] {
     background-color: #4835d4;
+}
+
+@media (min-width: 992px) {
+    .card-registration-2 .bg-indigo[b-61mhvsoavr] {
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
     }
-    @media (min-width: 992px) {
-    .card-registration-2 .bg-indigo[b-nwz5q5i50u] {
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+}
+
+@media (max-width: 991px) {
+    .card-registration-2 .bg-indigo[b-61mhvsoavr] {
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
     }
-    }
-    @media (max-width: 991px) {
-    .card-registration-2 .bg-indigo[b-nwz5q5i50u] {
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    }
-    }
+}
+#form3Examplea7[b-61mhvsoavr]{
+    border: none;
+}
+#form3Examplea7:focus[b-61mhvsoavr]{  
+    outline: solid 2.5px rgba(49, 76, 228, 0.959);      
+}
 /* _content/MvcApp1/Views/Shared/_Layout.cshtml.rz.scp.css */
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */

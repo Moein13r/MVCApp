@@ -1,6 +1,8 @@
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using MvcApp1.Mssql;
+using System.Security.Claims;
 
 namespace MvcApp1.Controllers
 {
@@ -18,6 +20,20 @@ namespace MvcApp1.Controllers
         public IActionResult Login()
         {
             return View();
+        }
+        [HttpPost]
+        public IActionResult SignIn(Models.Request.UserSpecefication item)
+        {
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Name,item.FirstName + " " + item.LastName)
+            };
+            var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            var principal = new ClaimsPrincipal(identity);
+            var props = new AuthenticationProperties();
+            props.ExpiresUtc = new DateTimeOffset(DateTime.Now.AddMinutes(5));
+            HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, props).Wait();
+            return RedirectToAction("Index", "Home");
         }
     }
 }
