@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddAuthentication().AddCookie(CookieAuthenticationDefaults.AuthenticationScheme);
+builder.Services.AddAuthentication().AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, opt => { opt.ExpireTimeSpan = TimeSpan.FromMinutes(5); opt.SlidingExpiration = true; opt.Cookie.MaxAge = opt.ExpireTimeSpan; });
 
 builder.Services.AddScoped<MvcApp1.Mssql.IExternalDataResolver>(
     _ =>

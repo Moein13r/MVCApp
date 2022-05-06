@@ -19,6 +19,12 @@ namespace MvcApp1.Controllers
 
         public IActionResult Login()
         {
+            if (HttpContext.Request.Cookies.ContainsKey("First_Request"))
+            {
+                HttpContext.Response.Cookies.Delete("First_Request");
+                return RedirectToAction("Index", "Home");
+            }
+            HttpContext.Response.Cookies.Append("First_Request", "Moein", new CookieOptions { Expires = new DateTimeOffset(DateTime.Now.AddMinutes(2))}) ;
             return View();
         }
         [HttpPost]
@@ -26,12 +32,11 @@ namespace MvcApp1.Controllers
         {
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Name,item.FirstName + " " + item.LastName)
+                new Claim(ClaimTypes.UserData,"First_Request")
             };
             var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
             var principal = new ClaimsPrincipal(identity);
             var props = new AuthenticationProperties();
-            props.ExpiresUtc = new DateTimeOffset(DateTime.Now.AddMinutes(5));
             HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, props).Wait();
             return RedirectToAction("Index", "Home");
         }
